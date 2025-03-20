@@ -1,0 +1,22 @@
+{
+  "models": [
+    {
+      "name": "Model1",
+      "fields": [
+        {
+          "name": "id",
+          "type": "int"
+        }
+      ]
+    },
+    {
+      "name": "Model2",
+      "fields": [
+        {
+          "name": "id",
+          "type": "int"
+        }
+      ]
+    }
+  ]
+}
