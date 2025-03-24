@@ -1,6 +1,6 @@
 name: json_to_flutter
 description: A package to convert JSON files to Flutter code.
-version: 1.0.2
+version: 1.0.4
 repository: https://github.com/Thiago-Rizzo/json_to_flutter
 homepage: https://github.com/Thiago-Rizzo/json_to_flutter
 
