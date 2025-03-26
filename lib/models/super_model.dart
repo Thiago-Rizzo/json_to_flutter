@@ -1,8 +1,7 @@
-String getStub() => '''
 import 'dart:convert';
 
-class Model {
-  const Model();
+abstract class SuperModel {
+  const SuperModel();
 
   static Map<String, dynamic> dynamicToMap(dynamic source) {
     try {
@@ -24,4 +23,3 @@ class Model {
     return dynamicToMap(source);
   }
 }
-''';

@@ -1,6 +1,7 @@
 String getStub() => '''
 import 'dart:convert';
-import 'model.dart';
+
+{{imports}}
 
 class {{className}} extends Model {
   {{properties}}

@@ -1,6 +1,6 @@
-import 'dart:convert';
+import 'package:json_to_flutter/models/super_model.dart';
 
-class Field {
+class Field extends SuperModel {
   final String name;
   final String type;
   final String defaultValue;
@@ -16,25 +16,5 @@ class Field {
   }
 
   factory Field.fromDynamic(dynamic source) =>
-      source is Field ? source : Field().copyWith(dynamicToMap(source));
-
-  static Map<String, dynamic> dynamicToMap(dynamic source) {
-    try {
-      if (source is String) {
-        source = jsonDecode(source);
-      }
-    } catch (e) {
-      return <String, dynamic>{};
-    }
-
-    if (source is Map) {
-      return source.cast<String, dynamic>();
-    }
-
-    if (source == null) {
-      return <String, dynamic>{};
-    }
-
-    return dynamicToMap(source);
-  }
+      source is Field ? source : Field().copyWith(SuperModel.dynamicToMap(source));
 }
