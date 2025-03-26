@@ -15,7 +15,7 @@ class ControllerResource {
   }
 
   String _getContent(Module module) {
-    String controller = definitions.controllerStub;
+    String controller = definitions.stub.controllerStub;
 
     controller = controller.replaceAll('{{imports}}', _getImports(module.name.toSnakeCase()));
     controller = controller.replaceAll('{{className}}', '${module.name.toPascalCase()}Controller');

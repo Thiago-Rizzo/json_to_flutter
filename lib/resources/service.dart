@@ -9,7 +9,7 @@ class ServiceResource {
   const ServiceResource(this.definitions);
 
   Future<void> generate() async {
-    await writeToFile('${definitions.httpClientPath}http_client.dart', definitions.httpClientStub);
+    await writeToFile('${definitions.httpClientPath}http_client.dart', definitions.stub.httpClientStub);
 
     for (var module in definitions.modules) {
       await writeToFile(
@@ -20,7 +20,7 @@ class ServiceResource {
   }
 
   String _getContent(Module module) {
-    String service = definitions.serviceStub;
+    String service = definitions.stub.serviceStub;
 
     service = service.replaceAll('{{imports}}', _getImports(module.name.toSnakeCase()));
     service = service.replaceAll('{{className}}', '${module.name.toPascalCase()}Service');

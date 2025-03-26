@@ -11,7 +11,7 @@ class ModelResource {
 
   Future<void> generate() async {
     // generate super model
-    await writeToFile('${definitions.superModelPath}model.dart', definitions.superModelStub);
+    await writeToFile('${definitions.superModelPath}model.dart', definitions.stub.superModelStub);
 
     // generate models
     for (var module in definitions.modules) {
@@ -20,7 +20,7 @@ class ModelResource {
   }
 
   String _getContent(Module module) {
-    String model = definitions.modelStub;
+    String model = definitions.stub.modelStub;
 
     model = model.replaceAll('{{imports}}', _getImports(module));
     model = model.replaceAll('{{className}}', module.name.toPascalCase());

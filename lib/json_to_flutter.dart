@@ -18,12 +18,28 @@ class JsonToFlutter {
 
     definitions = Definitions.fromDynamic(file.readAsStringSync());
 
-    if (definitions.superModelStub.isEmpty) {
+    if (definitions.packageName.isEmpty) {
+      throw Exception('Arquivo Invalido, Arquivo não contém packageName.');
+    }
+
+    if (definitions.stub.superModelStub.isEmpty) {
       throw Exception('Arquivo Invalido, Arquivo não contém superModelStub.');
     }
 
-    if (definitions.modelStub.isEmpty) {
+    if (definitions.stub.modelStub.isEmpty) {
       throw Exception('Arquivo Invalido, Arquivo não contém modelStub.');
+    }
+
+    if (definitions.stub.serviceStub.isEmpty) {
+      throw Exception('Arquivo Invalido, Arquivo não contém serviceStub.');
+    }
+
+    if (definitions.stub.controllerStub.isEmpty) {
+      throw Exception('Arquivo Invalido, Arquivo não contém controllerStub.');
+    }
+
+    if (definitions.stub.httpClientStub.isEmpty) {
+      throw Exception('Arquivo Invalido, Arquivo não contém httpClientStub.');
     }
 
     if (definitions.modules.isEmpty) {
